@@ -45,7 +45,7 @@ public class home extends AppCompatActivity {
     ArrayList<DataSnapshot> Appliances = new ArrayList<DataSnapshot>();
     ArrayList<String> Appliance = new ArrayList<String>();
 
-    int arr1[] = {25,30,22,35};
+    int arr1[] = {30,50,20};
     String arr2[] = {"first","second","third","fourth"};
     int arr3[] = {Color.parseColor("#FFA726"),Color.parseColor("#66BB6A"),Color.parseColor("#EF5350"),Color.parseColor("#29B6F6")};
 
@@ -66,9 +66,16 @@ public class home extends AppCompatActivity {
         mSpinnerAdapter = new ArrayAdapter<String>(home.this, android.R.layout.simple_spinner_dropdown_item,mSpinnerList);
         spinner.setAdapter(mSpinnerAdapter);
 
-        list.add("hello");
-        list.add("welcome");
+        list.add("Bulb");
+        list.add("Drill");
+        list.add("Glue Gun");
+
+//        list.add(new list_class("Bulb","#FFA726"));
+//        list.add(new list_class("Drill","#66BB6A"));
+//        list.add(new list_class("Glue Gun","#EF5350"));
+
         listAdapter = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_expandable_list_item_1,list);
+
         chartlist.setAdapter(listAdapter);
 
 

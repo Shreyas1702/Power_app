@@ -81,7 +81,7 @@
 
                 />
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="20dp"
@@ -93,7 +93,7 @@
                     android:id="@+id/chartlist"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
-            </LinearLayout>
+            </RelativeLayout>
 
         </LinearLayout>
 
