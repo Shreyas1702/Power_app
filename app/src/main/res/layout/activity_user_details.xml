@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserDetails"
+    android:background="@drawable/bg">
+
+    <ImageView
+        android:id="@+id/app_logo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <EditText
+        android:id="@+id/edtlocation"
+        android:layout_width="275dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:ems="10"
+        android:hint="Location"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/rounded_edit_text"
+        android:drawableLeft="@drawable/ic_baseline_location_on_24"
+        android:drawablePadding="10dp"
+        android:padding="15dp"
+        android:textSize="18dp"/>
+
+    <EditText
+        android:id="@+id/edtprovider"
+        android:layout_width="275dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="Electricity Provider"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/edtlocation"
+        app:layout_constraintStart_toStartOf="@+id/edtlocation"
+        app:layout_constraintTop_toBottomOf="@+id/edtlocation"
+        android:background="@drawable/rounded_edit_text"
+        android:drawableLeft="@drawable/ic_baseline_electrical_services_24"
+        android:drawablePadding="10dp"
+        android:padding="15dp"
+        android:textSize="18dp"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="45dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_sign_up"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtprovider" >
+
+    <RadioButton
+        android:id="@+id/rdhome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Home"
+        app:layout_constraintEnd_toEndOf="@+id/radioGroup"
+        app:layout_constraintStart_toStartOf="@+id/edtprovider"
+        app:layout_constraintTop_toBottomOf="@+id/textView_place" />
+
+    <RadioButton
+        android:id="@+id/rdoffice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="Office"
+        app:layout_constraintStart_toEndOf="@+id/rdhome"
+        app:layout_constraintTop_toBottomOf="@+id/textView_place" />
+</RadioGroup>
+
+
+    <TextView
+        android:id="@+id/textView_place"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="Where would you like our service?"
+        android:textColor="#747474"
+        android:textSize="18dp"
+        app:layout_constraintStart_toStartOf="@+id/edtprovider"
+        app:layout_constraintTop_toBottomOf="@+id/edtprovider" />
+
+    <Button
+        android:id="@+id/btn_sign_up"
+        android:layout_width="200dp"
+        android:layout_height="47dp"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/rounded_edit_text"
+        android:text="Done"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
