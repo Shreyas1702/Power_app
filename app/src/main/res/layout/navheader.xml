@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:background="@color/design_default_color_primary"
+android:orientation="vertical">
+
+<ImageView
+    android:layout_width="170dp"
+    android:layout_marginTop="30dp"
+    android:layout_marginLeft="55dp"
+    android:backgroundTint="@color/black"
+    android:layout_height="200dp"
+    android:background="@drawable/logo"></ImageView>
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textColor="@color/black"
+    android:layout_marginTop="10dp"
+    android:textSize="20dp"
+    android:layout_marginLeft="90dp"
+    android:text="Alpha Care"></TextView>
+
+</LinearLayout>

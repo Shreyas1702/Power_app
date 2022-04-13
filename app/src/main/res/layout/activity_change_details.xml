@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".ChangeDetails">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="300dp"
+        android:text="Name"
+        android:textColor="@color/black"
+        android:textSize="20dp"></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="380dp"
+        android:text="E-mail"
+        android:textColor="@color/black"
+        android:textSize="20dp"></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="460dp"
+        android:text="Location"
+        android:textColor="@color/black"
+        android:textSize="20dp"></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="540dp"
+        android:text="Contact No."
+        android:textColor="@color/black"
+        android:textSize="20dp"></TextView>
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="620dp"
+        android:text="Electricity Provider"
+        android:textColor="@color/black"
+        android:textSize="20dp"></TextView>
+
+    <EditText
+        android:id="@+id/edtcprovider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="170dp"
+        android:layout_marginTop="620dp"
+        android:background="@drawable/rounded_edit_text"
+        android:ems="10"
+        android:padding="15dp"
+        android:textSize="15dp"></EditText>
+
+    <EditText
+        android:id="@+id/edtcnumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="170dp"
+        android:layout_marginTop="530dp"
+        android:background="@drawable/rounded_edit_text"
+        android:ems="10"
+        android:padding="15dp"
+        android:textSize="15dp"></EditText>
+
+    <EditText
+        android:id="@+id/edtclocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="170dp"
+        android:layout_marginTop="450dp"
+        android:background="@drawable/rounded_edit_text"
+        android:ems="10"
+        android:padding="15dp"
+        android:textSize="15dp"></EditText>
+
+    <EditText
+        android:id="@+id/edtcemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="170dp"
+        android:layout_marginTop="370dp"
+        android:background="@drawable/rounded_edit_text"
+        android:ems="10"
+        android:padding="15dp"
+        android:textSize="15dp"></EditText>
+
+    <EditText
+        android:id="@+id/edtcname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="170dp"
+        android:layout_marginTop="290dp"
+        android:background="@drawable/rounded_edit_text"
+        android:ems="10"
+        android:padding="15dp"
+        android:textSize="15dp"></EditText>
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="160dp"
+        android:text="Submit"></Button>
+
+
+
+
+
+</RelativeLayout>

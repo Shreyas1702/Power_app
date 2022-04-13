@@ -119,7 +119,7 @@ public class AddAppliance extends AppCompatActivity {
                 });
 
                 Intent intent = new Intent(AddAppliance.this, home.class);
-                intent.putExtra("id",id);
+                intent.putExtra("idko",id);
                 startActivity(intent);
             }
         });

@@ -11,13 +11,20 @@
         android:id="@+id/txtapp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="15dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:textSize="18dp"
+        android:layout_marginLeft="55dp"
         android:textColor="@color/black"
         android:textStyle="bold|italic"></TextView>
 
     <View
         android:id="@+id/colors"
-        android:layout_width="match_parent"
-        android:layout_height="45dp" />
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/black"
+        android:layout_width="15dp"
+        android:layout_height="15dp" />
 
 </androidx.cardview.widget.CardView>

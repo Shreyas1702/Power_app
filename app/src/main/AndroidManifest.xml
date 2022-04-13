@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TestMe">
         <activity
+            android:name=".ChangeDetails"
+            android:exported="false" />
+        <activity
+            android:name=".user_icon"
+            android:exported="false" />
+        <activity
+            android:name=".menu"
+            android:exported="false" />
+        <activity
             android:name=".home"
             android:exported="false" />
         <activity

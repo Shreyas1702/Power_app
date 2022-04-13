@@ -1,13 +1,21 @@
 package com.example.testme;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -15,8 +23,10 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,7 +39,7 @@ import org.eazegraph.lib.models.PieModel;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class home extends AppCompatActivity {
+public class home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     //
     PieChart pieChart;
     private RecyclerView mRecyclerView;
@@ -41,13 +51,19 @@ public class home extends AppCompatActivity {
 
     private ListView chartlist ;
     private ListAdapter listAdapter ;
-    private ArrayList<String> list = new ArrayList<>();
+    private ArrayList<list_class> list = new ArrayList<>();
     ArrayList<DataSnapshot> Appliances = new ArrayList<DataSnapshot>();
     ArrayList<String> Appliance = new ArrayList<String>();
+    TextView UserIcon ;
+    NavigationView nav ;
+    ActionBarDrawerToggle toggle;
+    DrawerLayout drawer;
+    Toolbar bar;
+    String id ;
 
     int arr1[] = {30,50,20};
     String arr2[] = {"first","second","third","fourth"};
-    int arr3[] = {Color.parseColor("#FFA726"),Color.parseColor("#66BB6A"),Color.parseColor("#EF5350"),Color.parseColor("#29B6F6")};
+    int arr3[] = {Color.parseColor("#000000"),Color.parseColor("#66BB6A"),Color.parseColor("#EF5350"),Color.parseColor("#29B6F6")};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,10 +71,11 @@ public class home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         Bundle bundle = getIntent().getExtras();
-        String id = bundle.getString("id");
+        id = bundle.getString("id");
 
         chartlist = findViewById(R.id.chartlist);
         pieChart = findViewById(R.id.piechart);
+        UserIcon = findViewById(R.id.userIcon);
         Spinner spinner = findViewById(R.id.spinner_spinner);
         mSpinnerList.add("Weekly");
         mSpinnerList.add("Monthly");
@@ -66,15 +83,33 @@ public class home extends AppCompatActivity {
         mSpinnerAdapter = new ArrayAdapter<String>(home.this, android.R.layout.simple_spinner_dropdown_item,mSpinnerList);
         spinner.setAdapter(mSpinnerAdapter);
 
-        list.add("Bulb");
-        list.add("Drill");
-        list.add("Glue Gun");
+        bar = findViewById(R.id.toolbar);
+        setSupportActionBar(bar);
 
-//        list.add(new list_class("Bulb","#FFA726"));
-//        list.add(new list_class("Drill","#66BB6A"));
-//        list.add(new list_class("Glue Gun","#EF5350"));
+        nav  = findViewById(R.id.nav_menu);
+        drawer = findViewById(R.id.drawer);
 
-        listAdapter = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_expandable_list_item_1,list);
+        toggle = new ActionBarDrawerToggle(this,drawer,bar,R.string.open,R.string.close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+        Log.d("Reaching","Outside On Itemenu");
+
+        nav.setNavigationItemSelectedListener(this);
+
+        UserIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),user_icon.class);
+                intent.putExtra("id",id);
+                startActivity(intent);
+            }
+        });
+
+        list.add(new list_class("Bulb",Color.WHITE));
+        list.add(new list_class("Drill",Color.BLUE));
+        list.add(new list_class("Glue Gun",Color.BLACK));
+
+       ListAdapter listAdapter = new List_Adapter(this,list);
 
         chartlist.setAdapter(listAdapter);
 
@@ -169,5 +204,37 @@ public class home extends AppCompatActivity {
 
         return cltn;
 
+    }
+
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item){
+        Log.d("Reached","Inside On ItemMenu");
+        switch(item.getItemId()){
+            case R.id.menu_home:
+                Toast.makeText(getApplicationContext(),"Home Panel is opened",Toast.LENGTH_LONG).show();
+//                Bundle bundle = new Bundle();
+//                bundle.putString("id",id);
+                getSupportFragmentManager().beginTransaction().add(R.id.fragment_conatiner,new MessageFragment()).commit();
+                break;
+
+            case R.id.menu_setting:
+                Toast.makeText(getApplicationContext(),"Setting Panel is opened",Toast.LENGTH_LONG).show();
+                break;
+
+            case R.id.menu_update:
+                Toast.makeText(getApplicationContext(),"Update Panel is opened",Toast.LENGTH_LONG).show();
+                break;
+        }
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
+    public void onBackPressed(){
+        if(drawer.isDrawerOpen(GravityCompat.START)){
+            drawer.closeDrawer(GravityCompat.START);
+        }else{
+            super.onBackPressed();
+        }
     }
 }
