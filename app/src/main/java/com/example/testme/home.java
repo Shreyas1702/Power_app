@@ -63,7 +63,7 @@ public class home extends AppCompatActivity implements NavigationView.OnNavigati
 
     int arr1[] = {30,50,20};
     String arr2[] = {"first","second","third","fourth"};
-    int arr3[] = {Color.parseColor("#000000"),Color.parseColor("#66BB6A"),Color.parseColor("#EF5350"),Color.parseColor("#29B6F6")};
+    int arr3[] = {Color.parseColor("#FFF60808"),Color.parseColor("#FF00137C"),Color.parseColor("#FF42ED49"),Color.parseColor("#29B6F6")};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,9 +105,9 @@ public class home extends AppCompatActivity implements NavigationView.OnNavigati
             }
         });
 
-        list.add(new list_class("Bulb",Color.WHITE));
+        list.add(new list_class("Bulb",Color.RED));
         list.add(new list_class("Drill",Color.BLUE));
-        list.add(new list_class("Glue Gun",Color.BLACK));
+        list.add(new list_class("Glue Gun",Color.GREEN));
 
        ListAdapter listAdapter = new List_Adapter(this,list);
 
@@ -157,7 +157,7 @@ public class home extends AppCompatActivity implements NavigationView.OnNavigati
                                 for (int j = 0; j < Appliance.size(); j++) {
                                     String a = Appliance.get(j);
 
-                                 int va = Integer.valueOf(snapshot.child(id).child("Daily").child(a).child(" CuConTo").getValue(Integer.class));
+                                 int va = Integer.valueOf(snapshot.child(id).child("Daily").child(a).child(" CuConpv").getValue(Integer.class));
                                       Log.i("message",""+va);
                                       String v = String.valueOf(va);
                                     Log.d("Array", "g" + a + v);
@@ -215,7 +215,7 @@ public class home extends AppCompatActivity implements NavigationView.OnNavigati
                 Toast.makeText(getApplicationContext(),"Home Panel is opened",Toast.LENGTH_LONG).show();
 //                Bundle bundle = new Bundle();
 //                bundle.putString("id",id);
-                getSupportFragmentManager().beginTransaction().add(R.id.fragment_conatiner,new MessageFragment()).commit();
+//                getSupportFragmentManager().beginTransaction().add(R.id.fragment_conatiner,new MessageFragment()).commit();
                 break;
 
             case R.id.menu_setting:

@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 android:layout_width="match_parent"
 android:layout_height="wrap_content"
-android:background="@color/design_default_color_primary"
+android:background="@color/lblue"
 android:orientation="vertical">
 
 <ImageView
@@ -11,15 +11,7 @@ android:orientation="vertical">
     android:layout_marginLeft="55dp"
     android:backgroundTint="@color/black"
     android:layout_height="200dp"
-    android:background="@drawable/logo"></ImageView>
-
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:textColor="@color/black"
-    android:layout_marginTop="10dp"
-    android:textSize="20dp"
-    android:layout_marginLeft="90dp"
-    android:text="Alpha Care"></TextView>
+    android:background="@drawable/logo"
+    android:layout_marginBottom="30dp" ></ImageView>
 
 </LinearLayout>

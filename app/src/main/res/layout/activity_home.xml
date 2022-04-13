@@ -28,14 +28,14 @@
                 android:elevation="4dp"
                 android:paddingLeft="25dp"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-                app:title="Navigation bar"
+                app:title="Welcome!!"
                 app:titleTextColor="@color/black" />
 
-            <fragment
+            <FrameLayout
                 android:id="@+id/fragment_conatiner"
 
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"></fragment>
+                android:layout_height="match_parent"></FrameLayout>
         </LinearLayout>
 
         <Spinner

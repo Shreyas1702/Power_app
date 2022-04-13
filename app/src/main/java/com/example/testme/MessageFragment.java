@@ -21,10 +21,10 @@ public class MessageFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        super.onCreateView(inflater,container,savedInstanceState);
-        Log.d("Mess_frag","Message_Fragment");
-        View v =  inflater.inflate(R.layout.fragment_home,container,false);
-        return v ;
+//        super.onCreateView(inflater,container,savedInstanceState);
+//        Log.d("Mess_frag","Message_Fragment");
+//        View v =  inflater.inflate(R.layout.fragment_home,container,false);
+        return null ;
     }
 
     @Override
